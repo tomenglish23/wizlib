@@ -21,11 +21,11 @@ namespace WizLib_Model.Models
         public double Price { get; set; }
 
         [ForeignKey("BookDetail")]
-        public int? BookDetail_Id { get; set; }
+        public int? BookDetail_Id { get; set; } // tmetmetme - Nullable for now. S6.51
         public BookDetail BookDetail { get; set; }
 
         [ForeignKey("Publisher")]
-        public int? Publisher_Id { get; set; }
+        public int? Publisher_Id { get; set; } // tmetmetme - Nullable for now. S6.51
         public Publisher Publisher { get; set; }
 
         public ICollection<BookAuthor> BookAuthors { get; set; }
