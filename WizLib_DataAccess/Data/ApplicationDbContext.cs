@@ -39,13 +39,26 @@ namespace WizLib_DataAccess.Data
             // composite key
             modelBuilder.Entity<BookAuthor>().HasKey(ba => new { ba.Author_Id, ba.Book_Id });
 
-
             modelBuilder.ApplyConfiguration(new FluentBookConfig());
             modelBuilder.ApplyConfiguration(new FluentBookDetailsConfig());
             modelBuilder.ApplyConfiguration(new FluentBookAuthorConfig());
             modelBuilder.ApplyConfiguration(new FluentPublisherConfig());
             modelBuilder.ApplyConfiguration(new FluentAuthorConfig());
-
         }
+
+        //public void DropFK(ApplicationDbContext db, string sqlCmd)   // tmetmetme 
+        //{
+        //    int numRows;
+        //    using (var command = db.Database.GetDbConnection().CreateCommand())
+        //    {
+        //        command.CommandText = sqlCmd;
+        //        command.CommandType = System.Data.CommandType.Text;
+
+        //        db.Database.OpenConnection();
+        //        numRows = command.ExecuteNonQuery();
+        //        db.Database.CloseConnection();
+        //    }
+        //}
+
     }
 }

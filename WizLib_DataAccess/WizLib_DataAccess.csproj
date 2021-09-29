@@ -5,11 +5,75 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Migrations\20210921222203_AddCategoryTableToDb.cs" />
+    <Compile Remove="Migrations\20210921222203_AddCategoryTableToDb.Designer.cs" />
+    <Compile Remove="Migrations\20210921230735_AddGenreTableToDb.cs" />
+    <Compile Remove="Migrations\20210921230735_AddGenreTableToDb.Designer.cs" />
+    <Compile Remove="Migrations\20210924213820_changeNameToGenreNameinGenreTable.cs" />
+    <Compile Remove="Migrations\20210924213820_changeNameToGenreNameinGenreTable.Designer.cs" />
+    <Compile Remove="Migrations\20210924215020_removeDisplayOrderColFromGenresTable.cs" />
+    <Compile Remove="Migrations\20210924215020_removeDisplayOrderColFromGenresTable.Designer.cs" />
+    <Compile Remove="Migrations\20210924215519_temp1.cs" />
+    <Compile Remove="Migrations\20210924215519_temp1.Designer.cs" />
+    <Compile Remove="Migrations\20210924215736_removeGenresTableFromDb.cs" />
+    <Compile Remove="Migrations\20210924215736_removeGenresTableFromDb.Designer.cs" />
+    <Compile Remove="Migrations\20210925163539_ChangeTableAndColumnNamesOfGenreTb.cs" />
+    <Compile Remove="Migrations\20210925163539_ChangeTableAndColumnNamesOfGenreTb.Designer.cs" />
+    <Compile Remove="Migrations\20210925164121_temp.cs" />
+    <Compile Remove="Migrations\20210925164121_temp.Designer.cs" />
+    <Compile Remove="Migrations\20210925164157_temp2.cs" />
+    <Compile Remove="Migrations\20210925164157_temp2.Designer.cs" />
+    <Compile Remove="Migrations\20210925165201_AddBookTableToDB.cs" />
+    <Compile Remove="Migrations\20210925165201_AddBookTableToDB.Designer.cs" />
+    <Compile Remove="Migrations\20210925165840_AddMaxLengthToISBNAndNotMappedToPriceRange.cs" />
+    <Compile Remove="Migrations\20210925165840_AddMaxLengthToISBNAndNotMappedToPriceRange.Designer.cs" />
+    <Compile Remove="Migrations\20210925170931_AddTablesAuthorAndPublisherToDB.cs" />
+    <Compile Remove="Migrations\20210925170931_AddTablesAuthorAndPublisherToDB.Designer.cs" />
+    <Compile Remove="Migrations\20210925171033_AddDbSetForAuthorAndPublisher.cs" />
+    <Compile Remove="Migrations\20210925171033_AddDbSetForAuthorAndPublisher.Designer.cs" />
+    <Compile Remove="Migrations\20210925174219_AddFKToBook.cs" />
+    <Compile Remove="Migrations\20210925174219_AddFKToBook.Designer.cs" />
+    <Compile Remove="Migrations\20210925175141_Add1to1BookBookDetails.cs" />
+    <Compile Remove="Migrations\20210925175141_Add1to1BookBookDetails.Designer.cs" />
+    <Compile Remove="Migrations\20210925180522_AddOneToManyBookAndPublisherRelation.cs" />
+    <Compile Remove="Migrations\20210925180522_AddOneToManyBookAndPublisherRelation.Designer.cs" />
+    <Compile Remove="Migrations\20210926012800_AddManyToManyBookAndAuthorRelationWithBookAuthor.cs" />
+    <Compile Remove="Migrations\20210926012800_AddManyToManyBookAndAuthorRelationWithBookAuthor.Designer.cs" />
+    <Compile Remove="Migrations\20210926013354_AddForeignKeyAnnotationToBookAuthor.cs" />
+    <Compile Remove="Migrations\20210926013354_AddForeignKeyAnnotationToBookAuthor.Designer.cs" />
+    <Compile Remove="Migrations\20210926171916_AddFluentBookDetailsToDb.cs" />
+    <Compile Remove="Migrations\20210926171916_AddFluentBookDetailsToDb.Designer.cs" />
+    <Compile Remove="Migrations\20210926175354_FluentAPIModels.cs" />
+    <Compile Remove="Migrations\20210926175354_FluentAPIModels.Designer.cs" />
+    <Compile Remove="Migrations\20210926175956_AddCategoryWithMixOfDataAnnotationAndFluent.cs" />
+    <Compile Remove="Migrations\20210926175956_AddCategoryWithMixOfDataAnnotationAndFluent.Designer.cs" />
+    <Compile Remove="Migrations\20210926181203_addOneToOneFluentBookAndBookDetail.cs" />
+    <Compile Remove="Migrations\20210926181203_addOneToOneFluentBookAndBookDetail.Designer.cs" />
+    <Compile Remove="Migrations\20210926181911_addOneToManyFluentBookAndPublisher.cs" />
+    <Compile Remove="Migrations\20210926181911_addOneToManyFluentBookAndPublisher.Designer.cs" />
+    <Compile Remove="Migrations\20210926184540_addManyToManyBookAndAuthor.cs" />
+    <Compile Remove="Migrations\20210926184540_addManyToManyBookAndAuthor.Designer.cs" />
+    <Compile Remove="Migrations\20210926184851_addManyToManyBookAndAuthorCorrection.cs" />
+    <Compile Remove="Migrations\20210926184851_addManyToManyBookAndAuthorCorrection.Designer.cs" />
+    <Compile Remove="Migrations\20210926195446_AddRawCategoryToTable.cs" />
+    <Compile Remove="Migrations\20210926195446_AddRawCategoryToTable.Designer.cs" />
+    <Compile Remove="Migrations\20210928163541_addDropBooksFKsConstraints.cs" />
+    <Compile Remove="Migrations\20210928163541_addDropBooksFKsConstraints.Designer.cs" />
+    <Compile Remove="Migrations\20210929155152_MakeBookDetailIdAndPublisherIdNullableInBookTable.cs" />
+    <Compile Remove="Migrations\20210929155152_MakeBookDetailIdAndPublisherIdNullableInBookTable.Designer.cs" />
+    <Compile Remove="Migrations\20210929161042_tempBookDetails.cs" />
+    <Compile Remove="Migrations\20210929161042_tempBookDetails.Designer.cs" />
+    <Compile Remove="Migrations\20210929183311_addThruSection6Chapter50ToWizLib1.cs" />
+    <Compile Remove="Migrations\20210929183311_addThruSection6Chapter50ToWizLib1.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="Data\" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.10" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="5.0.10" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="5.0.10" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.10">
       <PrivateAssets>all</PrivateAssets>

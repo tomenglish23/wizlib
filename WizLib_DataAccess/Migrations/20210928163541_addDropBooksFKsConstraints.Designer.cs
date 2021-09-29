@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using WizLib_DataAccess.Data;
 
 namespace WizLib_DataAccess.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210928163541_addDropBooksFKsConstraints")]
+    partial class addDropBooksFKsConstraints
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -52,7 +54,7 @@ namespace WizLib_DataAccess.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int?>("BookDetail_Id")
+                    b.Property<int>("BookDetail_Id")
                         .HasColumnType("int");
 
                     b.Property<string>("ISBN")
@@ -63,7 +65,7 @@ namespace WizLib_DataAccess.Migrations
                     b.Property<double>("Price")
                         .HasColumnType("float");
 
-                    b.Property<int?>("Publisher_Id")
+                    b.Property<int>("Publisher_Id")
                         .HasColumnType("int");
 
                     b.Property<string>("Title")
@@ -73,8 +75,7 @@ namespace WizLib_DataAccess.Migrations
                     b.HasKey("Book_Id");
 
                     b.HasIndex("BookDetail_Id")
-                        .IsUnique()
-                        .HasFilter("[BookDetail_Id] IS NOT NULL");
+                        .IsUnique();
 
                     b.HasIndex("Publisher_Id");
 
@@ -290,11 +291,15 @@ namespace WizLib_DataAccess.Migrations
                 {
                     b.HasOne("WizLib_Model.Models.BookDetail", "BookDetail")
                         .WithOne("Book")
-                        .HasForeignKey("WizLib_Model.Models.Book", "BookDetail_Id");
+                        .HasForeignKey("WizLib_Model.Models.Book", "BookDetail_Id")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("WizLib_Model.Models.Publisher", "Publisher")
                         .WithMany("Books")
-                        .HasForeignKey("Publisher_Id");
+                        .HasForeignKey("Publisher_Id")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("BookDetail");
 
